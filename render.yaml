@@ -1,0 +1,10 @@
+
+services:
+  - type: web
+    name: driveseed-docker
+    env: docker
+    region: singapore
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    healthCheckPath: /

@@ -1,0 +1,6 @@
+
+quart
+quart-cors
+playwright
+beautifulsoup4
+hypercorn
