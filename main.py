@@ -15,6 +15,11 @@ from playwright.async_api import async_playwright
 app = Quart(__name__)
 app = cors(app, allow_origin="*")
 
+# simple health route for Render
+@app.get("/")
+async def home():
+    return "OK"
+
 # Playwright globals (keep for fallback)
 _playwright = None
 _browser = None
@@ -261,8 +266,8 @@ async def get_link():
                 el = await pg.query_selector(selector)
                 if el:
                     href = await el.get_attribute("href")
-                    if href:
-                        return key, href
+                if href:
+                    return key, href
                 html = await pg.content()
                 soup = BeautifulSoup(html, "html.parser")
                 a = soup.find("a", href=True)
