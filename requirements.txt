@@ -4,3 +4,4 @@ quart-cors
 playwright
 beautifulsoup4
 hypercorn
+curl_cffi
